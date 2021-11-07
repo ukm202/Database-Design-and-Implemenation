@@ -1,0 +1,30 @@
+{% extends 'baseheader.html' %}
+
+{% block body %}
+<center>
+  <h2>Recommend</h2>
+  <p>Please recommend a book.</p>
+
+  <form action="{{ url_for('recommend_book')}}" class="jumbotron" method="POST" style="width: 450px;">
+      <p><input style="width: 300px;" placeholder="Your name" type="text" id="fname" name="fname" /><br /></p>
+      <p><input style="width: 300px;" placeholder="Book name" type="text" id="bname" name="bname" /><br /></p>
+      <p><input style="width: 300px;" placeholder="Author" type="text" id="aname" name="aname" /><br /></p>
+    
+      <p>
+        
+        <textarea style="width: 400px; height: 235px;" placeholder="Brief description of the book:" type="text" id="fmessage" name="fmessage"></textarea>
+      </p>
+
+      <p>
+          <a href="{{ url_for('home')}}">Cancel</a>
+          <input type="submit" name="post-btn" value="Post">
+      </p>
+
+  </form>
+</center>
+
+
+{% endblock %}
+
+
+

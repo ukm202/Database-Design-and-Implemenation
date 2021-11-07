@@ -1,0 +1,30 @@
+{% extends 'baseheader.html' %}
+
+{% block body %}
+<center>
+    <h2 style="margin-top: 80px;">Sign up</h2>
+
+
+    <form action="{{ url_for('signup_page')}}" class="jumbotron" method="POST" style="width: 400px; margin-bottom: 155px;" >
+        <p><input style="width: 300px;" placeholder="First name" type="text" id="fname" name="fname" /><br /></p>
+        <p><input style="width: 300px;" placeholder="Last name" type="text" id="lname" name="lname" /><br /></p>
+        <p><input style="width: 300px;" placeholder="Username" type="text" id="uname" name="uname" /><br /></p>
+
+        <p><input style="width: 300px;" placeholder="Email" type="text" id="email" name="email" /><br /></p>
+        <p><input style="width: 300px;" placeholder="Password" type="password" id="password" name="password" /><br /></p>
+
+
+        <p >
+            <a href="{{ url_for('home')}}">Cancel</a>
+            <input type="submit" name="post-btn" value="Sign up">
+        </p>
+
+    </form>
+
+</center>
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,44 @@
+{% extends 'loggedinheader.html' %}
+
+{% block body %}
+<div class="container">
+  <div class="jumbotron">
+    <center>
+      <h2>Welcome to the Book recommendation website. Connect with people and feel the books. </h1>
+    </center>
+
+  </div>
+</div>
+<!--  -->
+ 
+
+<!--  -->
+<div class="container">
+
+
+{% for doc in docs %}
+    <div  class="jumbotron jumbotron-fluid">
+      
+        <hr class="solid">
+        <p class="post" style="color: green;">
+            Recommended by {{doc.name}} at {{ doc.created_at.strftime("%H:%M on %d %B %Y") }}
+        </p>
+        <p style="color: red;"> 
+            Book: {{ doc.bname }} <br>
+            Author: {{ doc.aname }}
+  
+        </p>
+        <p style=" color: black;">
+            {{ doc.message }}
+        </p>
+      </br>
+      <a href="{{ url_for('edit',mongoid=doc._id)}}">Edit</a> | <a href="{{ url_for('delete',mongoid=doc._id)}}">Delete</a>
+      </br>
+            
+    </div>
+{%endfor%}
+</div>
+
+{% endblock %}
+
+

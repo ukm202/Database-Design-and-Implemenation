@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Recommendation App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <style>
+      .navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Book Recommendation App</h1>
+        <div class="navbar">
+          <div>
+            <p>
+              <a href="{{ url_for('home')}}">Home</a> |
+              <a href="{{ url_for('read')}}">All recommendations</a> |
+              <a href="{{ url_for('create')}}">Recommend a book</a>
+            </p>
+          </div>
+          <div>
+            <p>
+              <a href="{{ url_for('signup')}}">Sign up</a> |
+              <a href="{{ url_for('loggedInpage')}}">Login</a>
+
+            </p>
+          </div>
+      </div>
+      
+      </header>
+      <main>{% block container %} {% endblock %}</main>
+      <footer>
+        <p>
+          The source code for this book recommendation app is
+          <a href="https://github.com/database-design-assignments/web-app-uttam"
+            >available on Github</a
+          >.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

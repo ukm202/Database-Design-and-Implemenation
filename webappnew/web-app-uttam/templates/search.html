@@ -1,0 +1,30 @@
+<!-- {% extends 'baseheader.html' %}
+<form class="container" action="{{ url_for('search_book')}}">
+
+{% for doc in docs %}
+    <div  class="jumbotron jumbotron-fluid">
+        
+        <hr class="solid">
+        <p class="post">
+            Recommended by {{doc.name}} at {{ doc.created_at.strftime("%H:%M on %d %B %Y") }}
+        </p>
+        <p>
+            Book: {{ doc.bname }} <br>
+            Author: {{ doc.aname }}
+    
+        </p>
+        <p>
+            {{ doc.message }}
+        </p>
+        </br>
+        <a href="{{ url_for('edit',mongoid=doc._id)}}">Edit</a> | <a href="{{ url_for('delete',mongoid=doc._id)}}">Delete</a>
+        </br>
+            
+    </div>
+{%endfor%}
+</form>
+
+
+
+
+ -->

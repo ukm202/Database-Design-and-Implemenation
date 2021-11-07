@@ -1,0 +1,28 @@
+{% extends 'baseheader.html' %} {% block body %}
+<center>
+  <h2>Update</h2>
+  <p>Edit a record in the MongoDB database collection.</p>
+  <form method="POST" action="{{ url_for('edit_post', mongoid=mongoid) }}" class="jumbotron" style="width: 450px;">
+    <p>
+    
+      <input style="width: 300px;" placeholder="Your name" type="text" id="fname" name="fname" value="{{doc.name}}" /><br />
+    </p>
+    <p>
+      
+      <input style="width: 300px;" placeholder="Book name" type="text" id="bname" name="bname" value="{{doc.bname}}" /><br />
+    </p>
+    <p>
+   
+      <input style="width: 300px;" placeholder="Author" type="text" id="aname" name="aname" value="{{doc.aname}}" /><br />
+    </p>
+    <p>
+    
+      <textarea style="width: 400px; height: 235px;" placeholder="Brief description of the book:" id="fmessage" name="fmessage">{{doc.message}}</textarea>
+    </p>
+    <p>
+      <a href="{{ url_for('home')}}">Cancel</a>
+      <input type="submit" name="post-btn" value="Save" />
+    </p>
+  </form>
+</center>
+{% endblock %}
